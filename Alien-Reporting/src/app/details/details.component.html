@@ -1,0 +1,11 @@
+<p>
+  
+  <!-- <ngx-sortable [items]="items.form" [name]="items.formId" (listSorted)="listOrderChanged($event)"> -->
+    <ngx-sortable [items]="items.form" [name]="items.formId" >
+    <ng-template let-item>
+        <div class="sortable-list-item">
+            {{item.caption}}
+        </div>
+    </ng-template>
+</ngx-sortable>
+</p>

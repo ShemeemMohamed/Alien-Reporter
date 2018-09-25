@@ -1,0 +1,20 @@
+.sortable-list-item{
+    padding: 5px;
+    margin: 5px;
+}
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.sortable-container{
+    width: 100%!important;
+    height: auto!important;
+}
+ul {
+    list-style: none;
+}

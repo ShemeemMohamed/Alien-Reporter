@@ -1,11 +1,33 @@
-<p>
-  
-  <!-- <ngx-sortable [items]="items.form" [name]="items.formId" (listSorted)="listOrderChanged($event)"> -->
-    <ngx-sortable [items]="items.form" [name]="items.formId" >
-    <ng-template let-item>
-        <div class="sortable-list-item">
-            {{item.caption}}
-        </div>
-    </ng-template>
-</ngx-sortable>
-</p>
+<!-- <ngx-sortable [items]="items.form" [name]="items.formId" (listSorted)="listOrderChanged($event)"> -->
+<h3 *ngIf="hasContactId">Your ID :{{contactId}} </h3>
+<h3>Changed by:
+  <small>{{items.lastChangedBy}}</small>
+</h3>
+<h4>
+  Last Changed on:
+  <small>{{items.lastChangedDate}}</small>
+</h4>
+<!-- <ngx-sortable [items]="items.form" [name]="items.formId">
+  <ng-template let-item>
+    <div class="sortable-list-item">
+      <label>{{item.caption}}</label>
+      <input [placeholder]="item.caption" [type]="item.type">
+    </div>
+  </ng-template>
+</ngx-sortable> -->
+<!-- <h2>Drag / drop the item</h2>
+<div [sortablejs]="items.form" [sortablejsOptions]="{ animation: 150 }">
+  <div *ngFor="let item of items.form">
+      <label>{{item.caption}}</label>
+      <input [placeholder]="item.caption" [type]="item.type">
+  </div>
+</div> -->
+<ul class="todo-list" dnd-sortable-container [sortableData]="items.form">
+  <li *ngFor="let item of items.form; let i = index" class="todo-item" dnd-sortable [sortableIndex]="i">
+    <div class="view">
+      <label>{{item.caption}}</label>
+      <input [placeholder]="item.caption" [type]="item.type">
+
+    </div>
+  </li>
+</ul>
